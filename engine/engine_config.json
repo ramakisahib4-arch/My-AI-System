@@ -1,0 +1,6 @@
+{
+  "engine": "llama.cpp",
+  "model_type": "GGUF",
+  "model_path": "../model",
+  "ready": false
+}
