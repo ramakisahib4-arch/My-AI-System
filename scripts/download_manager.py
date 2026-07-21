@@ -12,16 +12,25 @@ class DownloadManager:
         with open(self.config / "models.json", "r", encoding="utf-8") as f:
             return json.load(f)
 
-    def show_components(self):
-        data = self.load_models()
+    def check_structure(self):
+        models = self.load_models()
 
-        print("========== AI Components ==========")
+        print("====== AI System Components ======")
 
-        for key, value in data.items():
-            print(f"{key} : {value['name']}")
+        for component, info in models.items():
+            folder = self.root / info["path"]
 
-        print("===================================")
+            status = "OK" if folder.exists() else "Missing"
+
+            print(
+                f"{component}: {info['name']} | "
+                f"Folder: {info['path']} | "
+                f"Status: {status}"
+            )
+
+        print("==================================")
 
 
 if __name__ == "__main__":
-    DownloadManager().show_components()
+    manager = DownloadManager()
+    manager.check_structure()
