@@ -1,29 +1,9 @@
 {
-  "model": {
-    "name": "Qwen3",
-    "repo": "QwenLM/Qwen3",
-    "path": "model",
-    "enabled": true
-  },
-
-  "engine": {
-    "name": "llama.cpp",
-    "repo": "ggml-org/llama.cpp",
-    "path": "engine",
-    "enabled": true
-  },
-
-  "agent": {
-    "name": "OpenHands",
-    "repo": "All-Hands-AI/OpenHands",
-    "path": "agent",
-    "enabled": true
-  },
-
-  "framework": {
-    "name": "LangChain",
-    "repo": "langchain-ai/langchain",
-    "path": "tools",
-    "enabled": true
+  "qwen3_4b": {
+    "name": "Qwen3-4B-GGUF",
+    "format": "GGUF",
+    "engine": "llama.cpp",
+    "path": "model/qwen3-4b.gguf",
+    "download": false
   }
 }
