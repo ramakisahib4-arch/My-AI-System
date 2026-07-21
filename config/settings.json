@@ -1,0 +1,18 @@
+{
+  "project": {
+    "name": "My-AI-System",
+    "version": "1.0.0"
+  },
+
+  "download": {
+    "model": true,
+    "engine": true,
+    "agent": true,
+    "tools": true
+  },
+
+  "platform": {
+    "android": true,
+    "web": true
+  }
+}
