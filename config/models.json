@@ -1,1 +1,22 @@
-{}
+{
+  "model": {
+    "name": "Qwen3",
+    "provider": "Hugging Face",
+    "repo": "Qwen/Qwen3"
+  },
+
+  "engine": {
+    "name": "llama.cpp",
+    "repo": "ggml-org/llama.cpp"
+  },
+
+  "agent": {
+    "name": "OpenHands",
+    "repo": "All-Hands-AI/OpenHands"
+  },
+
+  "framework": {
+    "name": "LangChain",
+    "repo": "langchain-ai/langchain"
+  }
+}
