@@ -1,0 +1,12 @@
+{
+  "models": [
+    {
+      "id": "qwen3_4b",
+      "name": "Qwen3-4B-GGUF",
+      "format": "GGUF",
+      "download_url": "",
+      "file_name": "qwen3-4b.gguf",
+      "enabled": true
+    }
+  ]
+}
