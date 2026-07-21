@@ -1,18 +1,17 @@
 {
   "project": {
-    "name": "My-AI-System",
-    "version": "1.0.0"
+    "name": "My AI System",
+    "version": "1.0.0",
+    "language": "fa"
   },
 
-  "download": {
-    "model": true,
-    "engine": true,
-    "agent": true,
-    "tools": true
+  "ai": {
+    "default_model": "Qwen3",
+    "engine": "llama.cpp"
   },
 
-  "platform": {
-    "android": true,
-    "web": true
+  "api": {
+    "host": "0.0.0.0",
+    "port": 8080
   }
 }
