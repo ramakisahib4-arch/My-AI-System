@@ -1,39 +1,60 @@
 import json
+from datetime import datetime
 
 
 class ResponseManager:
 
-    def create_response(
+    def success(
         self,
-        message,
-        status="success"
+        data
     ):
 
-        response = {
-            "status": status,
-            "message": message
+        return {
+            "status": "success",
+            "time": str(
+                datetime.now()
+            ),
+            "data": data
         }
 
-        return response
+
+    def error(
+        self,
+        message
+    ):
+
+        return {
+            "status": "error",
+            "message": message,
+            "time": str(
+                datetime.now()
+            )
+        }
 
 
-    def to_json(self, data):
+    def to_json(
+        self,
+        response
+    ):
 
         return json.dumps(
-            data,
+            response,
             ensure_ascii=False,
             indent=2
         )
+
 
 
 if __name__ == "__main__":
 
     manager = ResponseManager()
 
-    result = manager.create_response(
-        "AI is ready"
+    result = manager.success(
+        "AI Ready"
     )
 
     print(
-        manager.to_json(result)
+        manager.to_json(
+            result
+        )
     )
