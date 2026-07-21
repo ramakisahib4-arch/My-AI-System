@@ -1,24 +1,44 @@
+import json
+
+
 class RequestManager:
 
-    def __init__(self):
-        self.requests = []
+    def parse(
+        self,
+        data
+    ):
+
+        if isinstance(
+            data,
+            str
+        ):
+
+            try:
+
+                return json.loads(
+                    data
+                )
+
+            except:
+
+                return {
+                    "message": data
+                }
 
 
-    def add_request(self, user, message):
-
-        request = {
-            "user": user,
-            "message": message
-        }
-
-        self.requests.append(request)
-
-        return request
+        return data
 
 
-    def get_requests(self):
+    def validate(
+        self,
+        request
+    ):
 
-        return self.requests
+        if "message" in request:
+
+            return True
+
+        return False
 
 
 
@@ -26,9 +46,14 @@ if __name__ == "__main__":
 
     manager = RequestManager()
 
-    result = manager.add_request(
-        "user",
-        "Hello AI"
+    request = manager.parse(
+        '{"message":"Hello AI"}'
     )
 
-    print(result)
+    print(request)
+
+    print(
+        manager.validate(
+            request
+        )
+    )
