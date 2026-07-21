@@ -1,34 +1,29 @@
-from agent.ai_core import AICore
+from agent.pipeline import AIPipeline
 
 
 class AIService:
 
     def __init__(self):
 
-        self.ai = AICore()
+        self.pipeline = AIPipeline()
 
 
-    def load(self, model):
+    def chat(
+        self,
+        message
+    ):
 
-        self.ai.load_model(model)
-
-
-    def process(self, prompt):
-
-        return self.ai.ask(prompt)
-
+        return self.pipeline.run(
+            message
+        )
 
 
 if __name__ == "__main__":
 
     service = AIService()
 
-    service.load(
-        "Qwen3"
-    )
-
     print(
-        service.process(
-            "Build an app"
+        service.chat(
+            "Hello AI"
         )
     )
