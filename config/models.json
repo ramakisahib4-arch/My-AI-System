@@ -1,22 +1,29 @@
 {
   "model": {
     "name": "Qwen3",
-    "provider": "Hugging Face",
-    "repo": "Qwen/Qwen3"
+    "repo": "QwenLM/Qwen3",
+    "path": "model",
+    "enabled": true
   },
 
   "engine": {
     "name": "llama.cpp",
-    "repo": "ggml-org/llama.cpp"
+    "repo": "ggml-org/llama.cpp",
+    "path": "engine",
+    "enabled": true
   },
 
   "agent": {
     "name": "OpenHands",
-    "repo": "All-Hands-AI/OpenHands"
+    "repo": "All-Hands-AI/OpenHands",
+    "path": "agent",
+    "enabled": true
   },
 
   "framework": {
     "name": "LangChain",
-    "repo": "langchain-ai/langchain"
+    "repo": "langchain-ai/langchain",
+    "path": "tools",
+    "enabled": true
   }
 }
